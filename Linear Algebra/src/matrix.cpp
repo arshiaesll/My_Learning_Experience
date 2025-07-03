@@ -21,6 +21,7 @@ Matrix::Matrix(const Matrix &matrix)
     {
         for (int j = 0; j < cols; j++)
         {
+            // TODO: Check if it's working
             this->matrix[i][j] = matrix.matrix[i][j];
         }
     }
@@ -43,6 +44,20 @@ std::string Matrix::toString() const
     }
 
     return result;
+}
+
+Matrix Matrix::T()
+{
+    Matrix m = Matrix(this->cols, this->rows);
+    for (int i = 0; i < cols; ++i)
+    {
+        for (int j = 0; j < rows; ++j)
+        {
+            // TODO: This should be fixed after fixing the operator bug
+        }
+    }
+
+    return *this;
 }
 
 std::ostream &operator<<(std::ostream &os, const Matrix &matrix)
