@@ -9,6 +9,7 @@ Matrix::Matrix(int rows, int cols)
     this->rows = rows;
     this->cols = cols;
     this->matrix.resize(rows, std::vector<double>(cols));
+    // std::cout << this->transpose() << std::endl;
 }
 
 // deep copy
@@ -46,18 +47,18 @@ std::string Matrix::toString() const
     return result;
 }
 
-Matrix Matrix::T()
+Matrix Matrix::transpose()
 {
     Matrix m = Matrix(this->cols, this->rows);
-    for (int i = 0; i < cols; ++i)
+    for (int i = 0; i < rows; ++i)
     {
-        for (int j = 0; j < rows; ++j)
+        for (int j = 0; j < cols; ++j)
         {
             // TODO: This should be fixed after fixing the operator bug
+            m[j][i] = (*this)[i][j];
         }
     }
-
-    return *this;
+    return m;
 }
 
 std::ostream &operator<<(std::ostream &os, const Matrix &matrix)

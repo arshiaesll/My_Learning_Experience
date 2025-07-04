@@ -20,12 +20,17 @@ public:
     int rank;
     std::vector<std::vector<double>> matrix;
 
+    // The tranpose of the matrix
+    std::vector<std::vector<double>> T;
     double operator()(int i, int j) const { return matrix[i][j]; }
-    std::vector<double> operator[](int i) { return matrix[i]; }
+
+    std::vector<double> &operator[](int i) { return matrix[i]; }
+
+    std::vector<double> operator[](int i) const { return matrix[i]; }
     // void operator=(int i) {}
     std::string toString() const;
     // Transpose the matrix and return the new Transposed matrix
-    Matrix T();
+    Matrix transpose();
 
     friend std::ostream &operator<<(std::ostream &os, const Matrix &matrix);
 };
