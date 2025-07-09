@@ -30,21 +30,28 @@ int main()
     int rows = 3, cols = 10;
     Matrix matrix1 = Matrix(rows, cols);
 
-    for (int i = 1; i < rows; i++)
+    int counter = 0;
+    for (int i = 0; i < rows; i++)
     {
-        for (int j = 1; j < cols; j++)
+        for (int j = 0; j < cols; j++)
         {
             // Works
             // matrix1.matrix[i][j] = i * j;
             // Doesn't work
 
-            matrix1[i][j] = i * j;
+            matrix1(i, j) = ++counter;
+            std::cout << counter << " ";
+            std::cout << matrix1(i, j) << std::endl;
+            ;
         }
     }
+
+    std::cout << matrix1.matrix.size() << std::endl;
     std::cout << matrix1 << std::endl;
-    Matrix m2 = matrix1.transpose();
-    std::cout << m2 << std::endl;
-    std::cout << m2.transpose() << std::endl;
+    // std::cout << matrix1.rows << " " << matrix1.cols << std::endl;
+    // Matrix m2 = matrix1.transpose();
+    // std::cout << m2 << std::endl;
+    // std::cout << m2.transpose() << std::endl;
 
     return 0;
 }
