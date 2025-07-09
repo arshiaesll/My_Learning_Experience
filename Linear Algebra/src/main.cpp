@@ -26,15 +26,6 @@ public:
 
 int main()
 {
-    // int a = 2;
-    // std::cout << f(a) << std::endl;
-    // Person p1 = Person(1, 2);
-    // p1.print();
-
-    // Person p2 = Person(3, 4);
-    // p2.print();
-    // p1 = p2;
-    // p1.print();
 
     int rows = 3, cols = 10;
     Matrix matrix1 = Matrix(rows, cols);
@@ -54,7 +45,6 @@ int main()
     Matrix m2 = matrix1.transpose();
     std::cout << m2 << std::endl;
     std::cout << m2.transpose() << std::endl;
-    // std::cout << matrix1.toString() << std::endl;
 
     return 0;
 }

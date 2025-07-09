@@ -21,7 +21,6 @@ public:
     std::vector<std::vector<double>> matrix;
 
     // The tranpose of the matrix
-    std::vector<std::vector<double>> T;
     double operator()(int i, int j) const { return matrix[i][j]; }
 
     std::vector<double> &operator[](int i) { return matrix[i]; }

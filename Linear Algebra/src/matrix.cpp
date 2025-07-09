@@ -9,7 +9,6 @@ Matrix::Matrix(int rows, int cols)
     this->rows = rows;
     this->cols = cols;
     this->matrix.resize(rows, std::vector<double>(cols));
-    // std::cout << this->transpose() << std::endl;
 }
 
 // deep copy
